@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <script>
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+    
+    let rating = params.rating;
+    window.onload = (event) => {
+        console.log(rating)
+        document.querySelector('.rate').innerHTML=rating;
+    };
+    
+  </script>
+</head>
+<body class="thank-you">
+
+ <!-- Thank you state start -->
+<div class="survey survey-thank-you">
+  <div class="survey-thank-you__headerimg">
+    <img src="images/illustration-thank-you.svg" alt="Thank you image">
+  </div>
+  <div class="survey__description">
+    <div class="survey__rating">You selected  <span class="rate"></span>  out of 5</div>
+    <h1 class="survey__title">Thank You!</h1>
+    <p>  We appreciate you taking the time to give a rating. If you ever need more support, 
+        don't hesitate to get in touch!</p>
+  </div>
+</div>
+  <!-- Thank you state end -->
+
+  
+  <div class="attribution">
+    Coded by <a href="https://github.com/Xulab5">Steven Sub</a>.
+  </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <script defer>    
+    function validate(){
+      let rated = false;
+      let ratings = document.getElementsByName('rating');
+      ratings.forEach(rating => {
+        if(rating.checked){          
+          rated = true;
+          break;
+        }        
+      });
+      if(!rated){
+        alert("Please select a rate before submitting.")
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Rating state start -->
+<div class="survey">
+  <div class="survey__star">
+    <img src="/images/icon-star.svg" alt="Star icon">
+  </div>
+  <div class="survey__description">
+    <h1 class="survey__title">How did we do?</h1>
+    <p>Please let us know how we did with your support request. All feedback is appreciated 
+      to help us improve our offering!</p>
+  </div>
+  <form action="/thank-you.html" class="survey__form" onsubmit=" return validate()" method="Get">
+    <div class="form__rate">
+      <div class="rating">
+        <input type="radio" id="rate__1" value="1" name="rating">
+        <label for="rate__1">1</label>
+      </div>       
+      <div class="rating">
+        <input type="radio" id="rate__2" value="2" name="rating">
+        <label for="rate__2">2</label>
+      </div>
+      <div class="rating">
+        <input type="radio" id="rate__3" value="3" name="rating">
+        <label for="rate__3">3</label>
+      </div>
+      <div class="rating">
+        <input type="radio" id="rate__4" value="4" name="rating">
+        <label for="rate__4">4</label>
+      </div>
+      <div class="rating">
+        <input type="radio" id="rate__5" value="5" name="rating">
+        <label for="rate__5">5</label>
+      </div>
+    </div>
+    <div class="form__button">
+      <!-- <button class="btn" type="submit">Submit</button> -->
+      <input type="submit" class="btn"value="Submit">
+    </div>
+  </form>
+</div>
+  <!-- Rating state end -->
+  
+  <div class="attribution">
+    Coded by <a href="https://github.com/Xulab5">Steven Sub</a>.
+  </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Medium-Grey: rgb(124, 135, 152);
+  --Dark-Blue: rgb(37, 45, 55);
+  --Very-Dark-Blue: rgb(18, 20, 23);
+  --circle-bc: rgb(53 62 74 / 38%);
+  --orange: rgb(252, 118, 20);
+}
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  background-color: var(--Very-Dark-Blue);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.survey {
+  background: rgb(37, 45, 55);
+  background: linear-gradient(
+    180deg,
+    rgba(37, 45, 55, 1) 0%,
+    rgba(23, 30, 40, 1) 100%
+  );
+  padding: 17px 24px;
+  margin: 0px 15px;
+  border-radius: 25px;
+  max-width: 324px;
+}
+.survey__star {
+  background-color: var(--circle-bc);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.survey__description h1 {
+  margin-bottom: 0px;
+  font-size: 25px;
+}
+.survey__description p {
+  color: var(--Light-Grey);
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0px;
+}
+.form__rate {
+  display: flex;
+  justify-content: space-between;
+}
+.rating label {
+  /* background-color: rgb(124, 135, 152); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--circle-bc);
+  color: var(--Light-Grey);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"]:checked + label {
+  background-color: var(--Light-Grey);
+  color: var(--white);
+}
+input[type="radio"]:hover + label {
+  background-color: var(--orange);
+  cursor: pointer;
+  color: var(--white);
+}
+.btn {
+  background-color: var(--orange);
+  border: 0px;
+  color: var(--white);
+  text-transform: uppercase;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn:focus-visible {
+  background-color: var(--white);
+  color: var(--orange);
+  cursor: pointer;
+  outline: none;
+}
+
+/*Thank you style*/
+
+.thank-you .survey__title,
+.thank-you .survey__description p {
+  text-align: center;
+}
+
+.thank-you .survey {
+  text-align: center;
+  padding-top: 35px;
+}
+.thank-you .survey__rating {
+  margin-top: 20px;
+  color: rgb(252 118 20 / 80%);
+  background-color: var(--circle-bc);
+  border-radius: 20px;
+  display: inline-block;
+  padding: 0.3em 1em;
+}
+@media (min-width: 768px) {
+  .rating label {
+    width: 50px;
+    height: 50px;
+  }
+}
